@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width">
+  	<title>Contacts Page</title>
+    <link rel="icon" type="image/x-icon" href="static/saved_images/quantanywherelogo.jpg">
+  	<link href="static/css/style.css" rel="stylesheet" type="text/css" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <!-- https://getbootstrap.com/docs/5.3/components/navbar/ -->
+    <!-- Create a navbar with a dark background -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <!-- Create a collapsible navbar content area -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <!-- Create an unordered list to hold the navigation links -->
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/strats">More Strategies</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/resources">Resources</a>
+          </li>
+        </ul>
+      </div>
+</nav>
+<!-- Forms -->
+<br><br><br>
+<div class = "container">
+  <div class = "row">
+    <div class = "col-2"> </div>
+    <div class = "col-8"> 
+      <center><h3 id = "contact-heading"> We value your feedback and insights immensely. Please feel free to reach out if you have any comments, questions, or concerns!
+      </h3></center> 
+    <div class = "col-2"> </div>
+      <form class="row g-3" method="post" action="/thank-you">
+        <div class="col-md-6">
+          <label for = "inputEmail4" id="form-question" class="form-label">Email</label>
+          <input type="email" name = "inputEmail4" class="form-control" id="inputEmail4" placeholder = "abc@gmail.com"required>
+        </div>
+        <div class="col-md-6">
+          <label for="inputTel"  id="form-question" class="form-label">Phone Number</label>
+          <input type="tel" name = "inputTel" class="form-control" id="inputTel" placeholder = "(xxx) xxx-xxxx">
+        </div>
+        <div class="col-12">
+          <label for="inputCompany"  id="form-question" class="form-label">University/Firm</label>
+          <input type="text" name = "inputCompany" class="form-control" id="inputCompany" placeholder = "Princeton University" required>
+        </div>
+        <div class="col-md-6">
+          <label for="inputCity"  id="form-question" class="form-label">City</label>
+          <input type="text" name = "inputCity" class="form-control" id="inputCity" required>
+        </div>
+        <div class="col-md-4">
+          <label for="inputState"  id="form-question" class="form-label">State</label>
+          <select id="inputState" name = "inputState" class="form-select">
+            <option selected>Choose...</option>
+            <option value="AK">AK</option>
+            <option value="AL">AL</option>
+            <option value="AR">AR</option>
+            <option value="AZ">AZ</option>
+            <option value="CA">CA</option>
+            <option value="CO">CO</option>
+            <option value="CT">CT</option>
+            <option value="DC">DC</option>
+            <option value="DE">DE</option>
+            <option value="FL">FL</option>
+            <option value="GA">GA</option>
+            <option value="HI">HI</option>
+            <option value="IA">IA</option>
+            <option value="ID">ID</option>
+            <option value="IL">IL</option>
+            <option value="IN">IN</option>
+            <option value="KS">KS</option>
+            <option value="KY">KY</option>
+            <option value="LA">LA</option>
+            <option value="MA">MA</option>
+            <option value="MD">MD</option>
+            <option value="ME">ME</option>
+            <option value="MI">MI</option>
+            <option value="MN">MN</option>
+            <option value="MO">MO</option>
+            <option value="MS">MS</option>
+            <option value="MT">MT</option>
+            <option value="NC">NC</option>
+            <option value="ND">ND</option>
+            <option value="NE">NE</option>
+            <option value="NH">NH</option>
+            <option value="NJ">NJ</option>
+            <option value="NM">NM</option>
+            <option value="NV">NV</option>
+            <option value="NY">NY</option>
+            <option value="OH">OH</option>
+            <option value="OK">OK</option>
+            <option value="OR">OR</option>
+            <option value="PA">PA</option>
+            <option value="RI">RI</option>
+            <option value="SC">SC</option>
+            <option value="SD">SD</option>
+            <option value="TN">TN</option>
+            <option value="TX">TX</option>
+            <option value="UT">UT</option>
+            <option value="VA">VA</option>
+            <option value="VT">VT</option>
+            <option value="WA">WA</option>
+            <option value="WI">WI</option>
+            <option value="WV">WV</option>
+            <option value="WY">WY</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <label for="inputZip"  id="form-question" class="form-label">Zip</label>
+          <input type="text" name = "inputZip" class="form-control" id="inputZip">
+        </div>
+        <div class="col-12">
+          <label for="textInput" id="form-question" class="form-label ">Feedback</label>
+          <textarea class="form-control align-top" name = "textInput" id="textInput" placeholder="Let us know your thoughts here!"> </textarea>
+        </div>
+        <div class="col-12">
+          <button type="submit" class="submit-btn">Submit</button>
+        </div>
+      </form>
+    </div>
+    <script src="script.js"></script>
+    <!-- Necessary Script -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+      integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    </body>
+</html>

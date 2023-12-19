@@ -1,6 +1,7 @@
 #import dataframes
 import os
 import warnings
+import requests
 import numpy as np
 import pandas as pd
 import yfinance as yf
@@ -140,7 +141,8 @@ class Backtester():
     def __init__(self):
         self.start_amount = 1
 
-    def set_info(self, initial_investment = 1, stock_name = "SPY", start_date = "2020-01-01", end_date = "2023-08-01", signals = [] ):
+    def set_info(self, initial_investment = 1, stock_name = "SPY", start_date = "2020-01-01", end_date = "2023-08-01", signals = None):
+        if not signals: signals = []
         self.data = yf.download(stock_name, start_date, end_date)[["Close"]]
         self.start_amount = initial_investment
         self.stock_name = stock_name
@@ -239,3 +241,26 @@ def remove_images():
     for file in os.listdir('static/images'):
         if file.endswith('.jpeg'):
             os.remove(r"C:/Users/oluwa/OneDrive/Desktop/Citadel Externship/Quantanywhere/static/images/" + file)
+
+
+def send_email(subject = "QuantAnywhere Feedback", phone_number = 1, university = "No School", feedback = ""):
+    token="GoGenerateAnApiToken"
+    sender = "Quant Anywhere"
+    msg_content = "University" + university + feedback
+    recipients = [862_224_0924]
+
+    payload = {
+        "sender": sender,
+        "message": msg_content,
+        "recipients": [
+            {"msisdn": recipient_number}
+            for recipient_number in recipients
+        ],
+    }
+    resp = requests.post(
+        "https://gatewayapi.com/rest/mtsms",
+        json=payload,
+        auth=(token, ""),
+    )
+    print("Worked")
+    resp.raise_for_status()

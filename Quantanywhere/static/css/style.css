@@ -17,6 +17,7 @@
     position: fixed;
     top: 0;
     width: 100%;
+    height : 8vh;
     padding: 5px;
     padding-bottom: 10px;
     font-family: 'Exo', sans-serif !important;
@@ -213,8 +214,10 @@ a {
 .charts{
     display: block;
     margin-left: auto;
+    align-content: center;
     margin-right: auto;
-    width: 700;
+    width: 90vw;
+    height : 90vh;
 }
 
 .carousel {
@@ -533,9 +536,10 @@ scrollbar-width: none;  /* Firefox */
 }
 
 .firm_btn-hover {
-  width: 400px;
+  width: 20vw;
+  height: 9vh;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 32px;
+  font-size: 1.5vw;
   font-weight: 600;
   color: #fff;
   cursor: pointer;
@@ -544,7 +548,6 @@ scrollbar-width: none;  /* Firefox */
   text-align:center;
   border: none;
   background-size: 300% 100%;
-
   border-radius: 50px;
   transition: all .4s ease-in-out;
   -o-transition: all .4s ease-in-out;

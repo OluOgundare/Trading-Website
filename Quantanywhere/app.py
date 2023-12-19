@@ -1,12 +1,12 @@
 from flask import Flask
 from flask import render_template
-from flask import request, jsonify
-from flask import redirect
+from flask import request
 from model import stock_info
-from model import remove_images, Backtester
-import os
+from model import remove_images, Backtester, send_email
 
 app = Flask(__name__)
+app.debug = True
+
 backtester = Backtester()
 ####################
 # ROUTES
@@ -30,19 +30,17 @@ def thanks():
         email = str(request.form["inputEmail4"])
         phone_number = str(request.form["inputTel"])
         corporation = str(request.form["inputCompany"])
-        city = str(request.form["inputCity"])
-        state = str(request.form["inputState"])
-        zip_code = str(request.form["inputZip"])
         feedback = str(request.form["textInput"])
         user = {
             "email": email,
             "phone_number": phone_number,
             "corporation": corporation,
-            "city": city,
-            "state": state,
-            "zip_code": zip_code,
             "feedback": feedback
-        }        
+        }    
+        try:
+            print(feedback)
+        except:
+            pass
         return render_template("thank-you.html", user = user)
 
 @app.route("/graphs", methods = ["GET", "POST"])
@@ -59,9 +57,9 @@ def graphs():
         endDate = request.form["endDate"]
         try:
             image_1, image_2, image_3, image_4, image_5, initial_share_price, profitPerShare, stock_name, website, signal_array = stock_info(stock, period, EMA_period, alpha, SDs, startDate, endDate)
+            backtester.set_info(stock_name = stock, start_date = startDate, end_date = endDate, signals = signal_array)
         except:
             return render_template("index.html")
-        backtester.set_info(stock_name = stock, start_date = startDate, end_date = endDate, signals = signal_array)
         user = {
             "stock": stock,
             "period": period,

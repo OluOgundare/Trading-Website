@@ -101,4 +101,4 @@ Use the `BLANK_README.md` to get started.
 <!-- Authors -->
 ## Authors
 Carina Guo - UPenn '26
-Oluwasola Ogundare - Cornell '26
+<br> Oluwasola Ogundare - Cornell '26
